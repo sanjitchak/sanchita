@@ -1,0 +1,2979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjit & Sanchita ✨ The Close Friend Chronicles</title>
+  <meta name="description" content="A rich, playful, and heartwarming digital space celebrating the friendship, coffee rituals, marathon calls, and memories of Sanjit & Sanchita.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  
+  <style>
+    /* ==========================================================================
+       Sanjit & Sanchita ✨ The Close Friend Chronicles
+       Modern, Cute, Aesthetic All-in-One Design System & Stylesheet
+       ========================================================================== */
+
+    :root {
+      --bg-primary: #fdfbf7;
+      --bg-secondary: #f6f0e8;
+      --bg-card: #ffffff;
+      
+      --color-rose: #f43f5e;
+      --color-rose-light: #ffe4e6;
+      --color-rose-subtle: #fff1f2;
+      
+      --color-peach: #fb923c;
+      --color-peach-light: #ffedd5;
+      
+      --color-amber: #f59e0b;
+      --color-yellow-light: #fef9c3;
+      
+      --color-lavender: #8b5cf6;
+      --color-lavender-light: #ede9fe;
+      
+      --color-mint: #10b981;
+      --color-mint-light: #d1fae5;
+      
+      --color-sky: #0ea5e9;
+      --color-sky-light: #e0f2fe;
+
+      --text-main: #292524;
+      --text-muted: #57534e;
+      --text-subtle: #78716c;
+
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-handwriting: 'Caveat', cursive;
+      --font-notes: 'Patrick Hand', cursive;
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 2px 8px rgba(41, 37, 36, 0.04);
+      --shadow-md: 0 10px 25px -5px rgba(41, 37, 36, 0.08), 0 8px 10px -6px rgba(41, 37, 36, 0.04);
+      --shadow-lg: 0 20px 35px -8px rgba(41, 37, 36, 0.12), 0 12px 16px -8px rgba(41, 37, 36, 0.06);
+      --shadow-polaroid: 0 15px 30px rgba(71, 45, 45, 0.14), 0 4px 10px rgba(0,0,0,0.06);
+
+      --transition-smooth: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      --transition-normal: all 0.25s ease-out;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Sparkle Background Canvas */
+    #sparkle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .section-container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* --- Navigation Bar --- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 251, 247, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(226, 219, 210, 0.7);
+      transition: var(--transition-normal);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--text-main);
+      transition: transform 0.2s ease;
+    }
+
+    .nav-logo:hover {
+      transform: scale(1.03);
+    }
+
+    .logo-heart {
+      font-size: 1.4rem;
+      animation: pulse-heart 2s infinite ease-in-out;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-full);
+      transition: var(--transition-normal);
+    }
+
+    .nav-link:hover {
+      color: var(--color-rose);
+      background: var(--color-rose-subtle);
+    }
+
+    /* Jukebox Player in Nav */
+    .nav-jukebox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .jukebox-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #ffffff;
+      border: 1.5px solid #fecdd3;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #e11d48;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+    }
+
+    .jukebox-btn:hover {
+      transform: scale(1.05);
+      background: #fff1f2;
+    }
+
+    .jukebox-btn.playing {
+      background: #ffe4e6;
+      border-color: #f43f5e;
+    }
+
+    .jukebox-wave {
+      display: none;
+      align-items: center;
+      gap: 3px;
+      height: 16px;
+    }
+
+    .jukebox-wave.active {
+      display: flex;
+    }
+
+    .jukebox-wave span {
+      width: 3px;
+      height: 100%;
+      background: #f43f5e;
+      border-radius: 2px;
+      animation: wave-bar 1.2s infinite ease-in-out;
+    }
+
+    .jukebox-wave span:nth-child(2) { animation-delay: 0.2s; }
+    .jukebox-wave span:nth-child(3) { animation-delay: 0.4s; }
+    .jukebox-wave span:nth-child(4) { animation-delay: 0.6s; }
+
+    @keyframes wave-bar {
+      0%, 100% { height: 4px; }
+      50% { height: 16px; }
+    }
+
+    /* Section Headers */
+    .section-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #db2777;
+      background: #fce7f3;
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 2.8rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-full);
+      font-family: var(--font-main);
+      font-size: 0.98rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);
+      color: #ffffff;
+      box-shadow: 0 8px 20px -4px rgba(244, 63, 94, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px -4px rgba(244, 63, 94, 0.55);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #be123c;
+      border: 2px solid #fecdd3;
+    }
+
+    .btn-secondary:hover {
+      background: #fff1f2;
+      border-color: #f43f5e;
+      transform: translateY(-2px);
+    }
+
+    .btn-tertiary {
+      background: #fef3c7;
+      color: #b45309;
+      border: 2px solid #fde68a;
+    }
+
+    .btn-tertiary:hover {
+      background: #fde68a;
+      transform: translateY(-2px);
+    }
+
+    .btn-subtle {
+      background: #f3f4f6;
+      color: #4b5563;
+    }
+
+    .btn-subtle:hover {
+      background: #e5e7eb;
+      color: #1f2937;
+    }
+
+    .btn-sm {
+      padding: 0.55rem 1.1rem;
+      font-size: 0.88rem;
+    }
+
+    /* --- Hero Section --- */
+    .hero-section {
+      position: relative;
+      padding: 4.5rem 1.5rem 5.5rem;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .hero-bg-blobs {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.45;
+    }
+
+    .blob-1 {
+      width: 380px;
+      height: 380px;
+      background: #fda4af;
+      top: -80px;
+      left: 10%;
+    }
+
+    .blob-2 {
+      width: 420px;
+      height: 420px;
+      background: #fed7aa;
+      top: 40px;
+      right: 10%;
+    }
+
+    .blob-3 {
+      width: 300px;
+      height: 300px;
+      background: #ddd6fe;
+      bottom: 0;
+      left: 35%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1.5px solid #fecdd3;
+      padding: 0.45rem 1.2rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #be123c;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+      animation: float-gentle 4s ease-in-out infinite;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight-warm {
+      color: #e11d48;
+      position: relative;
+      display: inline-block;
+    }
+
+    .highlight-warm::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: #fecdd3;
+      z-index: -1;
+      border-radius: 4px;
+      transform: rotate(-1.5deg);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 780px;
+      margin: 0 auto 2.2rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    /* Hero Polaroid Showcase */
+    .hero-polaroid-showcase {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      padding: 1rem;
+    }
+
+    .hero-polaroid {
+      background: #ffffff;
+      padding: 14px 14px 22px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-polaroid);
+      position: relative;
+      transition: var(--transition-smooth);
+      width: 250px;
+      cursor: pointer;
+    }
+
+    .hero-p1 {
+      transform: rotate(-5deg) translateY(10px);
+      z-index: 1;
+    }
+
+    .hero-p2 {
+      transform: rotate(2deg) translateY(-10px);
+      z-index: 2;
+    }
+
+    .hero-p3 {
+      transform: rotate(6deg) translateY(8px);
+      z-index: 1;
+    }
+
+    .hero-polaroid:hover {
+      transform: scale(1.08) rotate(0deg) translateY(-10px);
+      z-index: 10;
+      box-shadow: 0 25px 40px rgba(71, 45, 45, 0.22);
+    }
+
+    .polaroid-img-box {
+      width: 100%;
+      height: 220px;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+
+    .polaroid-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .polaroid-caption {
+      font-family: var(--font-handwriting);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #44403c;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* Washi Tape Decors */
+    .washi-tape {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 24px;
+      opacity: 0.85;
+      border-radius: 2px;
+      z-index: 5;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .washi-pink { background: rgba(251, 113, 133, 0.7); }
+    .washi-yellow { background: rgba(253, 224, 71, 0.75); }
+    .washi-mint { background: rgba(110, 231, 183, 0.75); }
+    .washi-rose { background: rgba(244, 63, 94, 0.65); }
+    .washi-lemon { background: rgba(250, 204, 21, 0.7); }
+    .washi-lavender { background: rgba(196, 181, 253, 0.75); }
+
+    /* --- Vibe Radar & Dynamics Section --- */
+    .vibe-section {
+      padding: 5rem 0;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+
+    .vibe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .vibe-card {
+      background: var(--bg-card);
+      padding: 2rem 1.6rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(226, 219, 210, 0.6);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vibe-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: #fecdd3;
+    }
+
+    .vibe-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .vibe-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+    }
+
+    .badge-rose { background: #ffe4e6; color: #be123c; }
+    .badge-amber { background: #fef3c7; color: #b45309; }
+    .badge-purple { background: #ede9fe; color: #6d28d9; }
+    .badge-mint { background: #d1fae5; color: #047857; }
+
+    .vibe-icon {
+      font-size: 2rem;
+    }
+
+    .vibe-metric {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .vibe-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #e11d48;
+      margin-bottom: 0.4rem;
+    }
+
+    .vibe-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .vibe-meter-bar {
+      height: 6px;
+      background: #f3f4f6;
+      border-radius: var(--radius-full);
+      margin-top: 1rem;
+      overflow: hidden;
+    }
+
+    .vibe-meter-fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      transition: width 1s ease-in-out;
+    }
+
+    .fill-rose { background: linear-gradient(90deg, #fb7185, #f43f5e); }
+    .fill-amber { background: linear-gradient(90deg, #fcd34d, #f59e0b); }
+    .fill-purple { background: linear-gradient(90deg, #a78bfa, #8b5cf6); }
+    .fill-mint { background: linear-gradient(90deg, #6ee7b7, #10b981); }
+
+    /* --- Starter Pack & Inside Lore Section --- */
+    .lore-section {
+      padding: 5.5rem 0;
+      background: var(--bg-primary);
+    }
+
+    .lore-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .lore-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+      border: 1.5px solid #f5ede4;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .lore-card:hover {
+      transform: translateY(-5px);
+      border-color: #fecdd3;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .lore-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .lore-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+    }
+
+    .lore-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .lore-body {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .lore-tagline {
+      font-family: var(--font-notes);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #e11d48;
+      margin-top: auto;
+    }
+
+    /* --- Fortune Cookie Box --- */
+    .fortune-cookie-container {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .fortune-cookie-card {
+      background: #ffffff;
+      border: 2px dashed #fecdd3;
+      border-radius: var(--radius-xl);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+
+    .fortune-cookie-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cookie-emoji {
+      font-size: 3rem;
+      animation: bounce-subtle 2s infinite ease-in-out;
+    }
+
+    .fortune-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      text-align: left;
+    }
+
+    .fortune-sub {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      text-align: left;
+    }
+
+    .fortune-paper {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-left: 5px solid #f59e0b;
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.8rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+      transition: var(--transition-normal);
+    }
+
+    .paper-pin {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      font-size: 1.4rem;
+    }
+
+    .fortune-text {
+      font-family: var(--font-notes);
+      font-size: 1.45rem;
+      color: #78350f;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+
+    .fortune-author {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #d97706;
+    }
+
+    .fortune-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* --- Polaroid Scrapbook Section --- */
+    .scrapbook-section {
+      padding: 5.5rem 0;
+      background: var(--bg-secondary);
+    }
+
+    .filter-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .filter-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-chip {
+      background: #ffffff;
+      border: 1.5px solid #e7e5e4;
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition-normal);
+    }
+
+    .filter-chip:hover {
+      background: var(--color-rose-subtle);
+      border-color: #fecdd3;
+      color: var(--color-rose);
+    }
+
+    .filter-chip.active {
+      background: #f43f5e;
+      border-color: #f43f5e;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.35);
+    }
+
+    /* Polaroid Grid */
+    .scrapbook-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2.5rem;
+      perspective: 1200px;
+    }
+
+    .polaroid-card {
+      position: relative;
+      height: 420px;
+      cursor: pointer;
+    }
+
+    .polaroid-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      border-radius: 12px;
+      box-shadow: var(--shadow-polaroid);
+    }
+
+    .polaroid-card.is-flipped .polaroid-inner {
+      transform: rotateY(180deg);
+    }
+
+    .polaroid-front,
+    .polaroid-back {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px 14px 18px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .polaroid-photo-frame {
+      position: relative;
+      width: 100%;
+      height: 270px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f5f5f4;
+    }
+
+    .scrapbook-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+
+    .polaroid-card:hover .scrapbook-img {
+      transform: scale(1.03);
+    }
+
+    .expand-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: var(--transition-normal);
+    }
+
+    .polaroid-card:hover .expand-badge {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .polaroid-footer {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .polaroid-title {
+      font-family: var(--font-handwriting);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .polaroid-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-subtle);
+      margin-top: 2px;
+    }
+
+    .btn-flip {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #e11d48;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: var(--transition-normal);
+    }
+
+    .btn-flip:hover {
+      background: #ffe4e6;
+    }
+
+    /* Back / Postcard Styling */
+    .polaroid-back {
+      transform: rotateY(180deg);
+      background: #fffdfa;
+      border: 1px dashed #e7e5e4;
+      padding: 1.8rem 1.4rem 1.4rem;
+      justify-content: space-between;
+    }
+
+    .postcard-stamp {
+      align-self: flex-end;
+      border: 2px dashed #f43f5e;
+      color: #f43f5e;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transform: rotate(5deg);
+    }
+
+    .postcard-heading {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: #be123c;
+      margin-top: -10px;
+    }
+
+    .postcard-text {
+      font-family: var(--font-handwriting);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #44403c;
+      line-height: 1.4;
+      margin: 0.5rem 0;
+    }
+
+    .postcard-sign {
+      font-family: var(--font-handwriting);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #e11d48;
+      text-align: right;
+    }
+
+    .back-flip-btn {
+      align-self: center;
+      margin-top: 0.5rem;
+    }
+
+    /* Image Filter Presets */
+    .filter-warm .scrapbook-img {
+      filter: sepia(0.25) saturate(1.3) brightness(1.05) contrast(1.05);
+    }
+
+    .filter-vintage .scrapbook-img {
+      filter: sepia(0.4) contrast(1.15) brightness(0.95) saturate(1.1);
+    }
+
+    .filter-dreamy .scrapbook-img {
+      filter: saturate(1.4) brightness(1.1) hue-rotate(-10deg) contrast(0.95);
+    }
+
+    .filter-noir .scrapbook-img {
+      filter: grayscale(1) contrast(1.2) brightness(1.05);
+    }
+
+    /* --- Story & Timeline Section --- */
+    .story-section {
+      padding: 5.5rem 0;
+      background: var(--bg-primary);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: #fecdd3;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1.5rem 2.5rem;
+      box-sizing: border-box;
+    }
+
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 2rem;
+      width: 44px;
+      height: 44px;
+      background: #ffffff;
+      border: 3px solid #f43f5e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      z-index: 5;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-item.left .timeline-dot {
+      right: -22px;
+    }
+
+    .timeline-item.right .timeline-dot {
+      left: -22px;
+    }
+
+    .timeline-card {
+      background: #ffffff;
+      padding: 1.7rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(226, 219, 210, 0.7);
+      transition: var(--transition-smooth);
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: #fecdd3;
+    }
+
+    .timeline-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #db2777;
+      background: #fce7f3;
+      padding: 0.2rem 0.75rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .timeline-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-footer {
+      font-family: var(--font-handwriting);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #e11d48;
+    }
+
+    /* --- Interactive Bucket List Section --- */
+    .bucket-section {
+      padding: 5.5rem 0;
+      background: var(--bg-secondary);
+    }
+
+    .bucket-box {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+      border: 1.5px solid rgba(226, 219, 210, 0.7);
+    }
+
+    .bucket-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .bucket-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      background: #fdfbf7;
+      border: 1.5px solid #f0e6da;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: var(--transition-normal);
+      user-select: none;
+    }
+
+    .bucket-item:hover {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      transform: translateX(4px);
+    }
+
+    .bucket-checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #ffffff;
+      background: #ffffff;
+      flex-shrink: 0;
+      transition: var(--transition-normal);
+    }
+
+    .bucket-item.checked .bucket-checkbox {
+      background: #10b981;
+      border-color: #10b981;
+    }
+
+    .bucket-text {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      flex-grow: 1;
+    }
+
+    .bucket-item.checked .bucket-text {
+      text-decoration: line-through;
+      color: var(--text-subtle);
+    }
+
+    .bucket-status {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      background: #f3f4f6;
+      color: #64748b;
+    }
+
+    .bucket-item.checked .bucket-status {
+      background: #d1fae5;
+      color: #047857;
+    }
+
+    /* --- Digital Corkboard & Sticky Notes --- */
+    .corkboard-section {
+      padding: 5.5rem 0;
+      background: #f4ece2;
+    }
+
+    /* Corkboard Texture & Frame */
+    .corkboard-frame {
+      background: #a3704c;
+      border: 14px solid #7c4d28;
+      border-radius: var(--radius-xl);
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.3), var(--shadow-lg);
+      padding: 1.5rem;
+    }
+
+    .corkboard-texture {
+      background: #caa67f;
+      background-image: 
+        radial-gradient(rgba(0, 0, 0, 0.08) 15%, transparent 16%),
+        radial-gradient(rgba(255, 255, 255, 0.12) 15%, transparent 16%);
+      background-size: 16px 16px;
+      background-position: 0 0, 8px 8px;
+      border-radius: var(--radius-md);
+      min-height: 400px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* Sticky Note Card */
+    .sticky-note {
+      position: relative;
+      padding: 1.8rem 1.2rem 1.2rem;
+      border-radius: 4px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.08);
+      font-family: var(--font-notes);
+      font-size: 1.28rem;
+      line-height: 1.35;
+      color: #292524;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .sticky-note:hover {
+      transform: scale(1.05) rotate(0deg) !important;
+      z-index: 10;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.22);
+    }
+
+    .note-pin {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+    }
+
+    .note-date {
+      font-size: 0.8rem;
+      color: rgba(0,0,0,0.45);
+      text-align: right;
+      margin-top: 0.5rem;
+      font-family: var(--font-main);
+      font-weight: 600;
+    }
+
+    /* Sticky Note Colors */
+    .note-pink { background: #ffe4e6; }
+    .note-yellow { background: #fef9c3; }
+    .note-mint { background: #d1fae5; }
+    .note-lavender { background: #ede9fe; }
+    .note-peach { background: #ffedd5; }
+    .note-sky { background: #e0f2fe; }
+
+    /* --- Sealed Letter Section --- */
+    .letter-section {
+      padding: 5.5rem 0;
+      background: var(--bg-primary);
+    }
+
+    .envelope-scene {
+      max-width: 620px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* The Realistic Envelope Body */
+    .envelope-box {
+      position: relative;
+      width: 520px;
+      max-width: 92vw;
+      height: 330px;
+      background: #fed7df;
+      border-radius: 16px;
+      box-shadow: 0 20px 45px rgba(225, 29, 72, 0.14), 0 8px 18px rgba(0, 0, 0, 0.05);
+      border: 2px solid #fecdd3;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      perspective: 1000px;
+      user-select: none;
+    }
+
+    .envelope-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px rgba(225, 29, 72, 0.2);
+    }
+
+    .envelope-box.is-open {
+      display: none;
+    }
+
+    /* Inside/Back layer */
+    .env-back {
+      position: absolute;
+      inset: 0;
+      background: #fce7eb;
+      border-radius: 14px;
+      z-index: 1;
+    }
+
+    /* Left and Right Fold Pockets */
+    .env-pocket-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: #fecdd3;
+      clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+      z-index: 3;
+      border-radius: 14px 0 0 14px;
+    }
+
+    .env-pocket-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: #fecdd3;
+      clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+      z-index: 3;
+      border-radius: 0 14px 14px 0;
+    }
+
+    /* Bottom Pocket */
+    .env-pocket-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 210px;
+      background: linear-gradient(0deg, #fba8b8 0%, #fecdd3 100%);
+      clip-path: polygon(0% 100%, 100% 100%, 50% 18%);
+      z-index: 4;
+      border-radius: 0 0 14px 14px;
+    }
+
+    /* Postage Stamp */
+    .env-postage-stamp {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      width: 58px;
+      height: 70px;
+      background: #ffffff;
+      border: 2px dashed #f43f5e;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      transform: rotate(6deg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .stamp-icon { font-size: 1.5rem; line-height: 1; }
+    .stamp-txt { font-size: 0.58rem; font-weight: 800; color: #be123c; letter-spacing: 0.05em; margin-top: 3px; }
+
+    /* Address Label in Center Bottom */
+    .env-address-label {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.96);
+      border: 1.5px solid #fecdd3;
+      border-radius: 12px;
+      padding: 0.65rem 1.4rem;
+      text-align: center;
+      z-index: 5;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      min-width: 260px;
+    }
+
+    .to-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #db2777;
+    }
+
+    .to-name {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #9f1239;
+      margin: 2px 0;
+    }
+
+    .from-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #881337;
+    }
+
+    /* Top Triangle Flap */
+    .env-flap-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 185px;
+      background: linear-gradient(180deg, #fecdd3 0%, #fba8b8 100%);
+      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+      transform-origin: top center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 6;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.08));
+    }
+
+    /* 3D Wax Seal Button in the Center */
+    .wax-seal-btn {
+      position: absolute;
+      top: 150px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      background: radial-gradient(circle at 35% 35%, #f43f5e 0%, #be123c 65%, #881337 100%);
+      border: 3.5px solid #9f1239;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(190, 18, 60, 0.45), inset 0 2px 4px rgba(255,255,255,0.4), inset 0 -3px 6px rgba(0,0,0,0.3);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .wax-seal-btn:hover {
+      transform: translate(-50%, -50%) scale(1.12);
+      box-shadow: 0 14px 28px rgba(190, 18, 60, 0.55);
+    }
+
+    .seal-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .seal-text {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      margin-top: 3px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    /* Opened Letter Stationery */
+    .letter-paper-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      display: none;
+      animation: unfold-letter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .letter-paper-wrapper.active {
+      display: block;
+    }
+
+    .letter-paper {
+      background: #fffdfa;
+      background-image: linear-gradient(#f1ebe4 1px, transparent 1px);
+      background-size: 100% 2.2rem;
+      padding: 3.5rem 3rem;
+      border-radius: var(--radius-xl);
+      border: 1.5px solid #fecdd3;
+      box-shadow: var(--shadow-lg);
+    }
+
+    @keyframes unfold-letter {
+      from {
+        opacity: 0;
+        transform: scale(0.92) translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .letter-top-ribbon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .letter-stamp-date {
+      font-family: var(--font-handwriting);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #be123c;
+      border-bottom: 1.5px dashed #fecdd3;
+      padding-bottom: 2px;
+    }
+
+    .letter-greeting {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #881337;
+      margin-bottom: 1.5rem;
+    }
+
+    .letter-body-content p {
+      font-family: var(--font-handwriting);
+      font-size: 1.48rem;
+      font-weight: 700;
+      line-height: 2.2rem;
+      color: #3f3939;
+      margin-bottom: 1.5rem;
+    }
+
+    .letter-sign-off {
+      margin-top: 2.5rem;
+      text-align: right;
+    }
+
+    .sign-text {
+      font-family: var(--font-handwriting);
+      font-size: 1.35rem;
+      color: #78716c;
+    }
+
+    .sign-name {
+      font-family: var(--font-handwriting);
+      font-size: 2rem;
+      font-weight: 700;
+      color: #e11d48;
+    }
+
+    .letter-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #f2ece4;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* --- Photo Lightbox Modal --- */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 12, 12, 0.85);
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox-content {
+      position: relative;
+      z-index: 2;
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #f3f4f6;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #374151;
+      cursor: pointer;
+      transition: var(--transition-normal);
+    }
+
+    .lightbox-close:hover {
+      background: #e11d48;
+      color: #ffffff;
+    }
+
+    .lightbox-img-wrapper {
+      width: 100%;
+      max-height: 60vh;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 60vh;
+      object-fit: contain;
+    }
+
+    .lightbox-details {
+      margin-top: 1.2rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .lightbox-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .lightbox-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* --- Footer --- */
+    .footer {
+      background: #ffffff;
+      border-top: 1px solid #f2ece4;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-heart-anim {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+      animation: pulse-heart 2s infinite ease-in-out;
+    }
+
+    .footer-text {
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+
+    .footer-sub {
+      font-size: 0.88rem;
+      color: var(--text-subtle);
+      margin-top: 0.4rem;
+    }
+
+    /* Keyframe Animations */
+    @keyframes pulse-heart {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes float-gentle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes bounce-subtle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .click-heart {
+      position: fixed;
+      pointer-events: none;
+      font-size: 1.8rem;
+      z-index: 10000;
+      animation: floatUpFade 1.2s forwards cubic-bezier(0.2, 0.8, 0.4, 1);
+    }
+
+    @keyframes floatUpFade {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.6) rotate(0deg);
+      }
+      50% {
+        opacity: 0.9;
+        transform: translate(-50%, -100px) scale(1.2) rotate(15deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -180px) scale(1.4) rotate(-15deg);
+      }
+    }
+
+    /* --- Responsive Queries --- */
+    @media (max-width: 900px) {
+      .hero-title {
+        font-size: 2.6rem;
+      }
+      
+      .hero-polaroid-showcase {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .hero-p1, .hero-p2, .hero-p3 {
+        transform: none;
+      }
+
+      .timeline::before {
+        left: 24px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 0;
+        text-align: left !important;
+      }
+
+      .timeline-item.left,
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .timeline-item.left .timeline-dot,
+      .timeline-item.right .timeline-dot {
+        left: 2px;
+      }
+
+      .letter-paper {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.05rem;
+      }
+
+      .section-title {
+        font-size: 1.85rem;
+      }
+
+      .vibe-grid,
+      .lore-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fortune-cookie-header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .fortune-title, .fortune-sub {
+        text-align: center;
+      }
+
+      .corkboard-texture {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient Sparkle Canvas for Background / Cursor Trail -->
+  <canvas id="sparkle-canvas"></canvas>
+
+  <!-- Sticky Quick Nav Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-heart">💖</span>
+        <span class="logo-text">Sanjit & Sanchita</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#vibes" class="nav-link">⚡ Vibe Radar</a>
+        <a href="#starter-pack" class="nav-link">🎒 Starter Pack</a>
+        <a href="#scrapbook" class="nav-link">📸 Memories</a>
+        <a href="#story" class="nav-link">📖 Timeline</a>
+        <a href="#bucket-list" class="nav-link">📋 Bucket List</a>
+        <a href="#corkboard" class="nav-link">📌 Notes</a>
+        <a href="#letter" class="nav-link">💌 Letter</a>
+      </nav>
+      <!-- Jukebox Player Quick Widget -->
+      <div class="nav-jukebox" id="nav-jukebox">
+        <button class="jukebox-btn" id="jukebox-toggle" title="Toggle Lo-Fi Music" aria-label="Toggle background music">
+          <span class="jukebox-icon" id="jukebox-icon">🎵</span>
+          <span class="jukebox-label" id="jukebox-label">Play Lo-Fi</span>
+        </button>
+        <div class="jukebox-wave" id="jukebox-wave">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="badge-pill">
+          <span class="badge-sparkle">✨</span>
+          <span>The Unofficial Guide to Sanjit & Sanchita</span>
+          <span class="badge-sparkle">✨</span>
+        </div>
+
+        <h1 class="hero-title">
+          Two <span class="highlight-warm">Close Friends</span>, Countless Coffees & Great Conversations 💕
+        </h1>
+
+        <p class="hero-subtitle">
+          From a fateful Shaadi.com introduction to becoming unshakeable close friends. A digital tribute to cozy afternoons at <strong>Roslyn Coffee</strong>, marathon <strong>phone discussions</strong>, city cafe adventures, and that legendary one-time <strong>D-Mart run</strong>!
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#scrapbook" class="btn btn-primary" id="btn-explore-memories">
+            <span>Explore Memories 📸</span>
+          </a>
+          <a href="#letter" class="btn btn-secondary" id="btn-open-letter">
+            <span>Read Sanjit's Letter 💌</span>
+          </a>
+          <button class="btn btn-tertiary" id="btn-fortune-hero">
+            <span>Hangout Fortune Cookie 🥠</span>
+          </button>
+        </div>
+
+        <!-- Floating Hero Polaroid Stack -->
+        <div class="hero-polaroid-showcase" id="hero-showcase">
+          <div class="hero-polaroid hero-p1">
+            <div class="washi-tape washi-pink"></div>
+            <div class="polaroid-img-box">
+              <img src="20260429_191545.jpg" alt="Sanjit and Sanchita at Roslyn Coffee" loading="eager">
+            </div>
+            <p class="polaroid-caption">Roslyn Coffee Table #3 (Our Office) ☕</p>
+          </div>
+
+          <div class="hero-polaroid hero-p2">
+            <div class="washi-tape washi-yellow"></div>
+            <div class="polaroid-img-box">
+              <img src="20260429_191528.jpg" alt="Sanjit and Sanchita D-Mart run" loading="eager">
+            </div>
+            <p class="polaroid-caption">The Legendary D-Mart Expedition 🛒</p>
+          </div>
+
+          <div class="hero-polaroid hero-p3">
+            <div class="washi-tape washi-mint"></div>
+            <div class="polaroid-img-box">
+              <img src="20251216_201448.jpg" alt="Winter hangout" loading="eager">
+            </div>
+            <p class="polaroid-caption">Day 1 of Hanging Out ❄️</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Vibe Radar & Friendship Compatibility Dynamics -->
+    <section class="vibe-section" id="vibes">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">⚡ Friendship Telemetry</span>
+          <h2 class="section-title">The Friendship Vibe Radar</h2>
+          <p class="section-subtitle">A deep dive into the unique habits, unspoken agreements, and quirks that make our friendship work effortlessly.</p>
+        </div>
+
+        <div class="vibe-grid">
+          <!-- Card 1 -->
+          <div class="vibe-card">
+            <div class="vibe-card-top">
+              <span class="vibe-badge badge-rose">Match Origin</span>
+              <span class="vibe-icon">💍</span>
+            </div>
+            <div class="vibe-metric">Shaadi.com</div>
+            <h3 class="vibe-title">The Ultimate Plot Twist</h3>
+            <p class="vibe-desc">Where people search for wedding matches, but fate gifted us something far better: an authentic, lifelong close friendship.</p>
+            <div class="vibe-meter-bar">
+              <div class="vibe-meter-fill fill-rose" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="vibe-card">
+            <div class="vibe-card-top">
+              <span class="vibe-badge badge-amber">Signature Spot</span>
+              <span class="vibe-icon">☕</span>
+            </div>
+            <div class="vibe-metric">Roslyn Coffee</div>
+            <h3 class="vibe-title">The Designated Meeting Ground</h3>
+            <p class="vibe-desc">Our default coordinates. Whether decompressing after a frantic week or catching up on news, this cafe is our second home.</p>
+            <div class="vibe-meter-bar">
+              <div class="vibe-meter-fill fill-amber" style="width: 95%;"></div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="vibe-card">
+            <div class="vibe-card-top">
+              <span class="vibe-badge badge-purple">Call Stamina</span>
+              <span class="vibe-icon">📱</span>
+            </div>
+            <div class="vibe-metric">2 hrs+</div>
+            <h3 class="vibe-title">The "Quick Check-in" Illusion</h3>
+            <p class="vibe-desc">"I can only talk for 2 minutes" is statistically guaranteed to turn into a full podcast episode covering every topic imaginable.</p>
+            <div class="vibe-meter-bar">
+              <div class="vibe-meter-fill fill-purple" style="width: 98%;"></div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="vibe-card">
+            <div class="vibe-card-top">
+              <span class="vibe-badge badge-mint">One-Time Lore</span>
+              <span class="vibe-icon">🛒</span>
+            </div>
+            <div class="vibe-metric">1 Safari</div>
+            <h3 class="vibe-title">The Supermarket Expedition</h3>
+            <p class="vibe-desc">That memorable one-time trip to D-Mart where a quick run turned into exploring every single row and leaving with carts of snacks.</p>
+            <div class="vibe-meter-bar">
+              <div class="vibe-meter-fill fill-mint" style="width: 90%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Fortune Cookie Box -->
+        <div class="fortune-cookie-container" id="fortune-box">
+          <div class="fortune-cookie-card">
+            <div class="fortune-cookie-header">
+              <span class="cookie-emoji" id="cookie-icon">🥠</span>
+              <div>
+                <h3 class="fortune-title">Close Friend Fortune & Hangout Cookie</h3>
+                <p class="fortune-sub">Crack a cookie to reveal a fresh thought about our friendship dynamic!</p>
+              </div>
+            </div>
+            <div class="fortune-paper" id="fortune-paper">
+              <span class="paper-pin">📌</span>
+              <p class="fortune-text" id="fortune-text">"The best friendships don't need daily maintenance — just a good coffee spot and instant easy conversation. ☕✨"</p>
+              <span class="fortune-author" id="fortune-author">— Sanjit's Notes</span>
+            </div>
+            <div class="fortune-actions">
+              <button class="btn btn-primary" id="btn-crack-cookie">
+                <span>Crack Another Cookie 🥠✨</span>
+              </button>
+              <button class="btn btn-subtle" id="btn-heart-burst">
+                <span>Send Love Burst 💖</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: The Close Friend Starter Pack & Inside Lore -->
+    <section class="lore-section" id="starter-pack">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">🎒 Inside Lore</span>
+          <h2 class="section-title">The Sanjit & Sanchita Starter Pack</h2>
+          <p class="section-subtitle">The essential ingredients, shared habits, and funny rituals that define our hangouts.</p>
+        </div>
+
+        <div class="lore-grid">
+          <!-- Item 1 -->
+          <div class="lore-card">
+            <div class="lore-header">
+              <div class="lore-icon-box">☕</div>
+              <h3 class="lore-title">The Roslyn Corner Table</h3>
+            </div>
+            <p class="lore-body">
+              Securing the comfiest seats, ordering iced brews or hot cappuccinos, and diving straight into deep life catchups.
+            </p>
+            <span class="lore-tagline">"Table reserved in spirit" 🌸</span>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="lore-card">
+            <div class="lore-header">
+              <div class="lore-icon-box">🌙</div>
+              <h3 class="lore-title">The Midnight Phone Podcast</h3>
+            </div>
+            <p class="lore-body">
+              Starting a call with zero agenda, only to spend hours analyzing work drama, childhood stories, philosophy, and hilarious memories.
+            </p>
+            <span class="lore-tagline">"Just 5 more minutes..." ⏱️</span>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="lore-card">
+            <div class="lore-header">
+              <div class="lore-icon-box">🛒</div>
+              <h3 class="lore-title">The Aisle Safari</h3>
+            </div>
+            <p class="lore-body">
+              That unforgettable one-time D-Mart run where checking out random chips and storage containers turned into peak comedy.
+            </p>
+            <span class="lore-tagline">"Cart full of snacks" 🍫</span>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="lore-card">
+            <div class="lore-header">
+              <div class="lore-icon-box">🍰</div>
+              <h3 class="lore-title">The Dessert Compromise</h3>
+            </div>
+            <p class="lore-body">
+              Both claiming we won't have dessert today, followed 4 minutes later by eagerly ordering the chocolate brownie or cheesecake to split.
+            </p>
+            <span class="lore-tagline">"Zero regrets, maximum sugar" 🍩</span>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="lore-card">
+            <div class="lore-header">
+              <div class="lore-icon-box">📸</div>
+              <h3 class="lore-title">The 30-Photo Protocol</h3>
+            </div>
+            <p class="lore-body">
+              Taking 30 candid photos in varying angles and lighting until we discover the one shot where the aesthetic is 10/10.
+            </p>
+            <span class="lore-tagline">"Lighting is everything" ✨</span>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="lore-card">
+            <div class="lore-header">
+              <div class="lore-icon-box">🤝</div>
+              <h3 class="lore-title">Zero Pretense Atmosphere</h3>
+            </div>
+            <p class="lore-body">
+              The comfort of not needing to impress anyone. Easy laughs, brutal honesty, total listening support, and pure relaxed energy.
+            </p>
+            <span class="lore-tagline">"Close friends forever" 💫</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Polaroid Scrapbook & Interactive Gallery -->
+    <section class="scrapbook-section" id="scrapbook">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">📸 Digital Scrapbook</span>
+          <h2 class="section-title">Moments Frozen In Time</h2>
+          <p class="section-subtitle">Click any Polaroid to flip it and read the backstory on the postcard back, or zoom in for photo filters!</p>
+        </div>
+
+        <!-- Photo Filters Toolbar -->
+        <div class="filter-toolbar">
+          <span class="filter-label">🎨 Scrapbook Vibe:</span>
+          <div class="filter-buttons" id="filter-buttons">
+            <button class="filter-chip active" data-filter="normal">Natural ✨</button>
+            <button class="filter-chip" data-filter="warm">Warm Nostalgia 🌇</button>
+            <button class="filter-chip" data-filter="vintage">Vintage Film 🎞️</button>
+            <button class="filter-chip" data-filter="dreamy">Dreamy Glow 🌸</button>
+            <button class="filter-chip" data-filter="noir">Classic Mono 🖤</button>
+          </div>
+        </div>
+
+        <!-- Scrapbook Polaroids Grid -->
+        <div class="scrapbook-grid" id="scrapbook-grid">
+          
+          <!-- Polaroid 1 -->
+          <div class="polaroid-card" data-index="0">
+            <div class="washi-tape washi-rose"></div>
+            <div class="polaroid-inner">
+              <!-- Front Side -->
+              <div class="polaroid-front">
+                <div class="polaroid-photo-frame">
+                  <img src="20260429_191545.jpg" alt="Sanjit & Sanchita Roslyn Coffee meetup" class="scrapbook-img" loading="lazy">
+                  <span class="expand-badge" title="Zoom in">🔍</span>
+                </div>
+                <div class="polaroid-footer">
+                  <h4 class="polaroid-title">Roslyn Coffee & Slow Afternoons ☕</h4>
+                  <p class="polaroid-date">📅 April 2026 • Coffee Adventures</p>
+                  <button class="btn-flip" title="Flip to read note">Read note ↺</button>
+                </div>
+              </div>
+              <!-- Back Side -->
+              <div class="polaroid-back">
+                <div class="postcard-stamp">☕ ROSLYN COFFEE</div>
+                <h4 class="postcard-heading">Archive Note #1</h4>
+                <p class="postcard-text">
+                  "There's an art to slow afternoons, iced drinks, and comfortable conversation. Always the best way to decompress after a long week!"
+                </p>
+                <div class="postcard-sign">— Sanjit ✌️</div>
+                <button class="btn-flip back-flip-btn" title="Flip back">View photo ↻</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Polaroid 2 -->
+          <div class="polaroid-card" data-index="1">
+            <div class="washi-tape washi-lemon"></div>
+            <div class="polaroid-inner">
+              <!-- Front Side -->
+              <div class="polaroid-front">
+                <div class="polaroid-photo-frame">
+                  <img src="20260429_191528.jpg" alt="Sanjit & Sanchita D-Mart run" class="scrapbook-img" loading="lazy">
+                  <span class="expand-badge" title="Zoom in">🔍</span>
+                </div>
+                <div class="polaroid-footer">
+                  <h4 class="polaroid-title">Aisle Explorers & Snack Architects 🛒</h4>
+                  <p class="polaroid-date">📅 April 2026 • The D-Mart Safari</p>
+                  <button class="btn-flip" title="Flip to read note">Read note ↺</button>
+                </div>
+              </div>
+              <!-- Back Side -->
+              <div class="polaroid-back">
+                <div class="postcard-stamp">🛒 D-MART RUN</div>
+                <h4 class="postcard-heading">Archive Note #2</h4>
+                <p class="postcard-text">
+                  "Documenting that legendary one-time D-Mart expedition. We went through every single aisle like seasoned explorers and laughed the entire time!"
+                </p>
+                <div class="postcard-sign">— Sanjit 🌟</div>
+                <button class="btn-flip back-flip-btn" title="Flip back">View photo ↻</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Polaroid 3 -->
+          <div class="polaroid-card" data-index="2">
+            <div class="washi-tape washi-mint"></div>
+            <div class="polaroid-inner">
+              <!-- Front Side -->
+              <div class="polaroid-front">
+                <div class="polaroid-photo-frame">
+                  <img src="20260429_191549.jpg" alt="Sanjit & Sanchita phone talks" class="scrapbook-img" loading="lazy">
+                  <span class="expand-badge" title="Zoom in">🔍</span>
+                </div>
+                <div class="polaroid-footer">
+                  <h4 class="polaroid-title">Unfiltered Energy & Big Smiles 🌸</h4>
+                  <p class="polaroid-date">📅 April 2026 • Candid Moments</p>
+                  <button class="btn-flip" title="Flip to read note">Read note ↺</button>
+                </div>
+              </div>
+              <!-- Back Side -->
+              <div class="polaroid-back">
+                <div class="postcard-stamp">📱 PHONE CALLS</div>
+                <h4 class="postcard-heading">Archive Note #3</h4>
+                <p class="postcard-text">
+                  "The best friendships are the ones where you don't have to filter your thoughts or pretend. Pure candid comfort and good energy every time."
+                </p>
+                <div class="postcard-sign">— Sanjit 💫</div>
+                <button class="btn-flip back-flip-btn" title="Flip back">View photo ↻</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Polaroid 4 -->
+          <div class="polaroid-card" data-index="3">
+            <div class="washi-tape washi-lavender"></div>
+            <div class="polaroid-inner">
+              <!-- Front Side -->
+              <div class="polaroid-front">
+                <div class="polaroid-photo-frame">
+                  <img src="20251216_201448.jpg" alt="Shaadi.com origin" class="scrapbook-img" loading="lazy">
+                  <span class="expand-badge" title="Zoom in">🔍</span>
+                </div>
+                <div class="polaroid-footer">
+                  <h4 class="polaroid-title">The Winter Archive ❄️</h4>
+                  <p class="polaroid-date">📅 Dec 2025 • How It Started</p>
+                  <button class="btn-flip" title="Flip to read note">Read note ↺</button>
+                </div>
+              </div>
+              <!-- Back Side -->
+              <div class="polaroid-back">
+                <div class="postcard-stamp">💍➡️🤝 CLOSE FRIENDS</div>
+                <h4 class="postcard-heading">Archive Note #4</h4>
+                <p class="postcard-text">
+                  "Looking back at where it all began. Shaadi.com brought us into each other's orbit, but genuine mutual friendship is what made us stay!"
+                </p>
+                <div class="postcard-sign">— Sanjit ☕</div>
+                <button class="btn-flip back-flip-btn" title="Flip back">View photo ↻</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Story & Milestones Timeline -->
+    <section class="story-section" id="story">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">📖 Narrative Arc</span>
+          <h2 class="section-title">The Friendship Odyssey</h2>
+          <p class="section-subtitle">The genuine story of how two people created an authentic, zero-drama close friendship.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item left">
+            <div class="timeline-dot">💍</div>
+            <div class="timeline-card">
+              <span class="timeline-pill">Phase 1</span>
+              <h3 class="timeline-title">The Unexpected Match</h3>
+              <p class="timeline-text">
+                Connecting on Shaadi.com without realizing that life was setting up an iconic close friendship instead of a standard matrimonial profile.
+              </p>
+              <div class="timeline-footer">✨ The serendipitous beginning</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item right">
+            <div class="timeline-dot">☕</div>
+            <div class="timeline-card">
+              <span class="timeline-pill">Phase 2</span>
+              <h3 class="timeline-title">Claiming Roslyn Coffee HQ</h3>
+              <p class="timeline-text">
+                Turning Roslyn Coffee into our undisputed sanctuary. Testing new brews, grabbing the corner table, and chatting for hours on end.
+              </p>
+              <div class="timeline-footer">☕ Brews, pastries & great chats</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item left">
+            <div class="timeline-dot">🛒</div>
+            <div class="timeline-card">
+              <span class="timeline-pill">Phase 3</span>
+              <h3 class="timeline-title">The Legendary Supermarket Safari</h3>
+              <p class="timeline-text">
+                That one spontaneous afternoon at D-Mart where walking through grocery aisles turned into an unforgettable comedy adventure.
+              </p>
+              <div class="timeline-footer">🍫 Carts, chips & endless laughs</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item right">
+            <div class="timeline-dot">📱</div>
+            <div class="timeline-card">
+              <span class="timeline-pill">Phase 4</span>
+              <h3 class="timeline-title">The 2-Minute Call Illusion</h3>
+              <p class="timeline-text">
+                Unlocking the superpower of turning routine 2-minute phone check-ins into midnight deep-dive podcasts spanning all of life.
+              </p>
+              <div class="timeline-footer">🌙 Midnight talk experts</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 5 -->
+          <div class="timeline-item left">
+            <div class="timeline-dot">🌟</div>
+            <div class="timeline-card">
+              <span class="timeline-pill">Phase 5</span>
+              <h3 class="timeline-title">The Unwritten Adventures Ahead</h3>
+              <p class="timeline-text">
+                More coffee discoveries, future road trips, countless laughs, and a friendship that only gets better with time.
+              </p>
+              <div class="timeline-footer">💖 Close friends for life</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Interactive Hangout Bucket List -->
+    <section class="bucket-section" id="bucket-list">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">📋 Escapades & Plans</span>
+          <h2 class="section-title">The Close Friend Bucket List</h2>
+          <p class="section-subtitle">Click items to toggle and celebrate milestones we've conquered and future adventures waiting for us!</p>
+        </div>
+
+        <div class="bucket-box">
+          <ul class="bucket-list" id="bucket-list-items">
+            <li class="bucket-item checked">
+              <span class="bucket-checkbox">✓</span>
+              <span class="bucket-text">Claim a permanent corner table at Roslyn Coffee</span>
+              <span class="bucket-status">Accomplished ☕</span>
+            </li>
+            <li class="bucket-item checked">
+              <span class="bucket-checkbox">✓</span>
+              <span class="bucket-text">Complete the legendary full-circuit D-Mart snack tour</span>
+              <span class="bucket-status">Conquered 🛒</span>
+            </li>
+            <li class="bucket-item checked">
+              <span class="bucket-checkbox">✓</span>
+              <span class="bucket-text">Survive a 2-hour marathon phone call on a random weekday</span>
+              <span class="bucket-status">Mastered 📱</span>
+            </li>
+            <li class="bucket-item">
+              <span class="bucket-checkbox"></span>
+              <span class="bucket-text">Do an evening dessert crawl across 3 different city cafes</span>
+              <span class="bucket-status">In the Works 🍰</span>
+            </li>
+            <li class="bucket-item">
+              <span class="bucket-checkbox"></span>
+              <span class="bucket-text">Order the weirdest seasonal drink on the cafe menu just to review it</span>
+              <span class="bucket-status">Planned 🥤</span>
+            </li>
+            <li class="bucket-item">
+              <span class="bucket-checkbox"></span>
+              <span class="bucket-text">Actually hang up a phone call within the promised 5 minutes (Impossible)</span>
+              <span class="bucket-status">Pending ⏱️</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Digital Corkboard & Sticky Notes Section -->
+    <section class="corkboard-section" id="corkboard">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">📌 Wall of Inside Jokes</span>
+          <h2 class="section-title">Our Digital Corkboard</h2>
+          <p class="section-subtitle">Hover over sticky notes to inspect our shared thoughts and hangout reminders!</p>
+        </div>
+
+        <!-- Corkboard Frame -->
+        <div class="corkboard-frame">
+          <div class="corkboard-texture" id="notes-grid">
+            <!-- Dynamic Sticky Notes -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Sealed Letter / Time Capsule Section -->
+    <section class="letter-section" id="letter">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">💌 From Sanjit to Sanchita</span>
+          <h2 class="section-title">A Special Letter For You</h2>
+          <p class="section-subtitle">Click the wax seal to break the seal and unfold this letter.</p>
+        </div>
+
+        <div class="envelope-scene">
+          <!-- The Realistic Envelope Visual -->
+          <div class="envelope-box" id="envelope-box">
+            <!-- Back interior layer -->
+            <div class="env-back"></div>
+
+            <!-- Left, Right, Bottom folded flaps -->
+            <div class="env-pocket-left"></div>
+            <div class="env-pocket-right"></div>
+            <div class="env-pocket-bottom"></div>
+
+            <!-- Airmail Stamp & Address Label -->
+            <div class="env-postage-stamp">
+              <span class="stamp-icon">🌸</span>
+              <span class="stamp-txt">AIR MAIL</span>
+            </div>
+
+            <div class="env-address-label">
+              <span class="to-label">Special Delivery To:</span>
+              <h3 class="to-name">Dear Sanchita 🌸</h3>
+              <span class="from-label">From: Sanjit ✨ • Close Friends Express</span>
+            </div>
+
+            <!-- Top Triangle Flap -->
+            <div class="env-flap-top" id="env-flap"></div>
+
+            <!-- 3D Wax Seal Button Centered on the flap tip -->
+            <div class="wax-seal-btn" id="wax-seal-btn" title="Click to break seal & open letter">
+              <span class="seal-icon">💖</span>
+              <span class="seal-text">OPEN</span>
+            </div>
+          </div>
+
+          <!-- Unfolded Letter Stationary Paper (Revealed on Open) -->
+          <div class="letter-paper-wrapper" id="letter-paper-wrapper">
+            <div class="letter-paper">
+              <div class="letter-top-ribbon">
+                <span class="ribbon-flower">🌸</span>
+                <span class="letter-stamp-date">August 2026 • Close Friends</span>
+                <span class="ribbon-flower">🌸</span>
+              </div>
+
+              <h3 class="letter-greeting">Hey Sanchita! ✨</h3>
+
+              <div class="letter-body-content">
+                <p>
+                  I wanted to build this digital space to celebrate our friendship and all the memories we've gathered so far.
+                </p>
+                <p>
+                  It's funny to think we first crossed paths on Shaadi.com, because what came out of it is one of the most genuine and effortless close friendships I have. Whether we're stationed at our favorite corner at Roslyn Coffee, roaming around trying new cafes, looking back at that legendary one-time D-Mart trip, or accidentally talking past midnight on the phone, hanging out with you is always full of easy comfort and great laughs.
+                </p>
+                <p>
+                  You're someone I can talk to about anything without having to put up a front, and I'm really grateful for our bond.
+                </p>
+                <p>
+                  Here's to many more coffee dates, spontaneous catch-ups, marathon phone talks, and checking off everything on our bucket list! 🎉
+                </p>
+              </div>
+
+              <div class="letter-sign-off">
+                <p class="sign-text">Your close friend,</p>
+                <p class="sign-name">Sanjit ✨</p>
+              </div>
+
+              <div class="letter-actions">
+                <button class="btn btn-secondary btn-sm" id="btn-close-envelope">
+                  <span>Fold & Close Envelope ✉️</span>
+                </button>
+                <button class="btn btn-primary btn-sm" id="btn-letter-confetti">
+                  <span>Celebrate! 🎊</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close photo view">✕</button>
+      <div class="lightbox-img-wrapper">
+        <img src="" alt="Zoomed memory" id="lightbox-img" class="lightbox-img">
+      </div>
+      <div class="lightbox-details">
+        <h3 class="lightbox-title" id="lightbox-title">Hangout Title</h3>
+        <p class="lightbox-desc" id="lightbox-desc">Hangout description</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-heart-anim">💕</div>
+      <p class="footer-text">
+        Crafted with great vibes by <strong>Sanjit</strong> for <strong>Sanchita</strong>.
+      </p>
+      <p class="footer-sub">Close Friends • Roslyn Coffee Meetups • Cafe Hopping • The D-Mart Trip • Phone Talks ✨</p>
+    </div>
+  </footer>
+
+  <!-- Complete Embedded All-In-One Interactive Application Logic -->
+  <script>
+    /**
+     * Sanjit & Sanchita ✨ The Close Friend Chronicles
+     * Interactive JavaScript Engine
+     */
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initJukebox();
+      initSparkles();
+      initClickHearts();
+      initFortuneCookie();
+      initScrapbookFiltersAndLightbox();
+      initCorkboardNotes();
+      initBucketList();
+      initLetterEnvelope();
+    });
+
+    /* ==========================================================================
+       1. Ambient Lo-Fi Procedural Synthesizer (Web Audio API)
+       ========================================================================== */
+    function initJukebox() {
+      const toggleBtn = document.getElementById('jukebox-toggle');
+      const icon = document.getElementById('jukebox-icon');
+      const label = document.getElementById('jukebox-label');
+      const wave = document.getElementById('jukebox-wave');
+
+      let audioCtx = null;
+      let isPlaying = false;
+      let timerId = null;
+
+      const chordProgressions = [
+        [261.63, 329.63, 392.00, 523.25], // Cmaj7 (C4, E4, G4, C5)
+        [220.00, 261.63, 329.63, 440.00], // Am7   (A3, C4, E4, A4)
+        [174.61, 220.00, 261.63, 349.23], // Fmaj7 (F3, A3, C4, F4)
+        [196.00, 246.94, 293.66, 392.00]  // G6    (G3, B3, D4, G4)
+      ];
+
+      let chordIndex = 0;
+
+      function playChimeChord() {
+        if (!isPlaying || !audioCtx) return;
+
+        const chord = chordProgressions[chordIndex % chordProgressions.length];
+        chordIndex++;
+
+        chord.forEach((freq, idx) => {
+          setTimeout(() => {
+            if (!isPlaying || !audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+            const now = audioCtx.currentTime;
+            gain.gain.setValueAtTime(0.001, now);
+            gain.gain.exponentialRampToValueAtTime(0.04, now + 0.1);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + 2.8);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(now);
+            osc.stop(now + 3.0);
+          }, idx * 180);
+        });
+
+        timerId = setTimeout(playChimeChord, 2600);
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        isPlaying = !isPlaying;
+
+        if (isPlaying) {
+          toggleBtn.classList.add('playing');
+          wave.classList.add('active');
+          icon.textContent = '⏸️';
+          label.textContent = 'Pause Music';
+          playChimeChord();
+        } else {
+          toggleBtn.classList.remove('playing');
+          wave.classList.remove('active');
+          icon.textContent = '🎵';
+          label.textContent = 'Play Lo-Fi';
+          if (timerId) clearTimeout(timerId);
+        }
+      });
+    }
+
+    /* ==========================================================================
+       2. Ambient Background Canvas Sparkles
+       ========================================================================== */
+    function initSparkles() {
+      const canvas = document.getElementById('sparkle-canvas');
+      const ctx = canvas.getContext('2d');
+
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      });
+
+      const stars = Array.from({ length: 28 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        size: Math.random() * 2 + 1,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random(),
+        delta: Math.random() * 0.02 + 0.005
+      }));
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        stars.forEach(s => {
+          s.x += s.speedX;
+          s.y += s.speedY;
+          s.alpha += s.delta;
+
+          if (s.alpha > 0.8 || s.alpha < 0.1) s.delta = -s.delta;
+          if (s.x < 0) s.x = width;
+          if (s.x > width) s.x = 0;
+          if (s.y < 0) s.y = height;
+          if (s.y > height) s.y = 0;
+
+          ctx.fillStyle = `rgba(244, 63, 94, ${s.alpha * 0.4})`;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+
+    /* ==========================================================================
+       3. Interactive Floating Hearts on Click
+       ========================================================================== */
+    function initClickHearts() {
+      const emojis = ['💖', '✨', '🌸', '☕', '🛒', '📱', '🍩', '⭐'];
+
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('input, textarea, select, button, .bucket-item')) return;
+
+        const heart = document.createElement('span');
+        heart.className = 'click-heart';
+        heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        heart.style.left = `${e.clientX}px`;
+        heart.style.top = `${e.clientY}px`;
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 1200);
+      });
+    }
+
+    /* ==========================================================================
+       4. Daily Fortune Cookie & Hangout Reminders
+       ========================================================================== */
+    function initFortuneCookie() {
+      const fortunes = [
+        "The best friendships don't need daily maintenance — just a good coffee spot and instant easy conversation. ☕✨",
+        "Shaadi.com thought it made a match, but it created an awesome close-friendship! ☕✨",
+        "Phone call status: 'Quick 2-minute call' ➔ 2 hours later still talking about life 📱",
+        "Roslyn Coffee order: Great brews, comfortable silence, and hours of laughter! 🌸",
+        "That one D-Mart run: Roaming aisles, finding random snacks, and laughing together 🛒",
+        "We met on Shaadi.com and unlocked the greatest close-friendship ever 💖",
+        "Meeting at Roslyn Coffee is always guaranteed to brighten up the day! 🌟",
+        "No matter what random topic we talk about, our phone calls are always top-tier 💫",
+        "Close friend rule: Always split the dessert, even when both claim they're on a diet 🍰",
+        "Here's to the friends who make every ordinary afternoon feel like an adventure! 🌸"
+      ];
+
+      const fortuneText = document.getElementById('fortune-text');
+      const crackBtn = document.getElementById('btn-crack-cookie');
+      const heroFortuneBtn = document.getElementById('btn-fortune-hero');
+      const heartBurstBtn = document.getElementById('btn-heart-burst');
+      const cookieIcon = document.getElementById('cookie-icon');
+
+      let lastIndex = 0;
+
+      function crackCookie() {
+        let newIndex;
+        do {
+          newIndex = Math.floor(Math.random() * fortunes.length);
+        } while (newIndex === lastIndex);
+
+        lastIndex = newIndex;
+
+        cookieIcon.style.transform = 'scale(1.4) rotate(20deg)';
+        setTimeout(() => {
+          cookieIcon.style.transform = 'scale(1) rotate(0deg)';
+        }, 300);
+
+        fortuneText.style.opacity = '0';
+        setTimeout(() => {
+          fortuneText.textContent = `"${fortunes[newIndex]}"`;
+          fortuneText.style.opacity = '1';
+        }, 200);
+
+        triggerConfetti(0.3);
+      }
+
+      if (crackBtn) crackBtn.addEventListener('click', crackCookie);
+      if (heroFortuneBtn) {
+        heroFortuneBtn.addEventListener('click', () => {
+          document.getElementById('vibes').scrollIntoView({ behavior: 'smooth' });
+          crackCookie();
+        });
+      }
+
+      if (heartBurstBtn) {
+        heartBurstBtn.addEventListener('click', () => {
+          triggerConfetti(0.8);
+        });
+      }
+    }
+
+    /* ==========================================================================
+       5. Scrapbook Polaroid Flips, Photo Filters & Lightbox Modal
+       ========================================================================== */
+    function initScrapbookFiltersAndLightbox() {
+      // Polaroid Flips
+      const polaroidCards = document.querySelectorAll('.polaroid-card');
+      polaroidCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.expand-badge')) return;
+          card.classList.toggle('is-flipped');
+        });
+      });
+
+      // Filter Toolbar
+      const filterChips = document.querySelectorAll('.filter-chip');
+      const scrapbookSection = document.getElementById('scrapbook');
+
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          filterChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+
+          const filterType = chip.getAttribute('data-filter');
+          scrapbookSection.classList.remove('filter-warm', 'filter-vintage', 'filter-dreamy', 'filter-noir');
+          if (filterType !== 'normal') {
+            scrapbookSection.classList.add(`filter-${filterType}`);
+          }
+        });
+      });
+
+      // Lightbox
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxDesc = document.getElementById('lightbox-desc');
+      const lightboxClose = document.getElementById('lightbox-close');
+      const lightboxBackdrop = document.getElementById('lightbox-backdrop');
+
+      const expandBadges = document.querySelectorAll('.expand-badge');
+      expandBadges.forEach(badge => {
+        badge.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const card = badge.closest('.polaroid-card');
+          const img = card.querySelector('.scrapbook-img');
+          const title = card.querySelector('.polaroid-title').textContent;
+          const date = card.querySelector('.polaroid-date').textContent;
+
+          lightboxImg.src = img.src;
+          lightboxTitle.textContent = title;
+          lightboxDesc.textContent = `${date} • Hanging out with close friend Sanchita`;
+
+          lightboxModal.classList.add('active');
+        });
+      });
+
+      function closeLightbox() {
+        lightboxModal.classList.remove('active');
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightboxBackdrop.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+    }
+
+    /* ==========================================================================
+       6. Digital Corkboard & Sticky Notes
+       ========================================================================== */
+    function initCorkboardNotes() {
+      const notesGrid = document.getElementById('notes-grid');
+
+      const notes = [
+        { id: 1, text: "Shaadi.com's greatest achievement: introducing us as close friends! 💍➡️🤝", color: "pink", pin: "💖", date: "Nov 2025" },
+        { id: 2, text: "Roslyn Coffee baristas probably recognise our drink orders by memory ☕", color: "yellow", pin: "☕", date: "Jan 2026" },
+        { id: 3, text: "Fact: 90% of our deep life revelations happen after 11:30 PM on the phone 📱", color: "mint", pin: "🌙", date: "April 2026" },
+        { id: 4, text: "The D-Mart rule: You never leave with just what you planned to buy 🛒", color: "lavender", pin: "🍫", date: "April 2026" },
+        { id: 5, text: "Next cafe criteria: must have good lighting, comfy chairs, and great pastries 🥐", color: "peach", pin: "⭐", date: "Aug 2026" },
+        { id: 6, text: "A good friend knows your stories. A close friend helped you live them 🌸", color: "sky", pin: "✨", date: "Aug 2026" }
+      ];
+
+      const rotations = [-3, 2, -4, 3, -2, 3.5];
+
+      function renderNotes() {
+        notesGrid.innerHTML = '';
+        notes.forEach((note, idx) => {
+          const rot = rotations[idx % rotations.length];
+          const div = document.createElement('div');
+          div.className = `sticky-note note-${note.color}`;
+          div.style.transform = `rotate(${rot}deg)`;
+
+          div.innerHTML = `
+            <span class="note-pin">${note.pin || '📌'}</span>
+            <p class="note-text">"${escapeHtml(note.text)}"</p>
+            <span class="note-date">${note.date}</span>
+          `;
+
+          notesGrid.appendChild(div);
+        });
+      }
+
+      function escapeHtml(str) {
+        return str.replace(/&/g, "&amp;")
+                  .replace(/</g, "&lt;")
+                  .replace(/>/g, "&gt;")
+                  .replace(/"/g, "&quot;")
+                  .replace(/'/g, "&#039;");
+      }
+
+      renderNotes();
+    }
+
+    /* ==========================================================================
+       7. Interactive Bucket List
+       ========================================================================== */
+    function initBucketList() {
+      const items = document.querySelectorAll('.bucket-item');
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          item.classList.toggle('checked');
+          const check = item.querySelector('.bucket-checkbox');
+          const status = item.querySelector('.bucket-status');
+          if (item.classList.contains('checked')) {
+            check.textContent = '✓';
+            status.textContent = 'Accomplished ✨';
+            triggerConfetti(0.4);
+          } else {
+            check.textContent = '';
+            status.textContent = 'Planned 📌';
+          }
+        });
+      });
+    }
+
+    /* ==========================================================================
+       8. Sealed Letter Envelope Unfolding
+       ========================================================================== */
+    function initLetterEnvelope() {
+      const envelopeBox = document.getElementById('envelope-box');
+      const letterPaperWrapper = document.getElementById('letter-paper-wrapper');
+      const waxSealBtn = document.getElementById('wax-seal-btn');
+      const closeBtn = document.getElementById('btn-close-envelope');
+      const confettiBtn = document.getElementById('btn-letter-confetti');
+      const openLetterHeroBtn = document.getElementById('btn-open-letter');
+
+      function openEnvelope() {
+        if (envelopeBox) envelopeBox.classList.add('is-open');
+        if (letterPaperWrapper) {
+          letterPaperWrapper.classList.add('active');
+          letterPaperWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        triggerConfetti(0.8);
+      }
+
+      function closeEnvelope() {
+        if (letterPaperWrapper) letterPaperWrapper.classList.remove('active');
+        if (envelopeBox) {
+          envelopeBox.classList.remove('is-open');
+          envelopeBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+
+      if (waxSealBtn) {
+        waxSealBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openEnvelope();
+        });
+      }
+
+      if (envelopeBox) {
+        envelopeBox.addEventListener('click', openEnvelope);
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeEnvelope);
+      if (confettiBtn) {
+        confettiBtn.addEventListener('click', () => {
+          triggerConfetti(1.2);
+        });
+      }
+
+      if (openLetterHeroBtn) {
+        openLetterHeroBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById('letter').scrollIntoView({ behavior: 'smooth' });
+          setTimeout(openEnvelope, 500);
+        });
+      }
+    }
+
+    /* ==========================================================================
+       9. Celebration Confetti Helper
+       ========================================================================== */
+    function triggerConfetti(intensity = 0.5) {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: Math.floor(60 * intensity),
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#f43f5e', '#fb7185', '#fb923c', '#f59e0b', '#8b5cf6', '#10b981']
+        });
+      }
+    }
+  </script>
+</body>
+</html>
