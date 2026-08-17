@@ -1148,94 +1148,7 @@
       color: #e11d48;
     }
 
-    /* --- Interactive Bucket List Section --- */
-    .bucket-section {
-      padding: 5.5rem 0;
-      background: var(--bg-secondary);
-    }
 
-    .bucket-box {
-      max-width: 780px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: var(--radius-xl);
-      padding: 2.5rem;
-      box-shadow: var(--shadow-md);
-      border: 1.5px solid rgba(226, 219, 210, 0.7);
-    }
-
-    .bucket-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .bucket-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.2rem;
-      background: #fdfbf7;
-      border: 1.5px solid #f0e6da;
-      border-radius: var(--radius-md);
-      cursor: pointer;
-      transition: var(--transition-normal);
-      user-select: none;
-    }
-
-    .bucket-item:hover {
-      background: #fff1f2;
-      border-color: #fecdd3;
-      transform: translateX(4px);
-    }
-
-    .bucket-checkbox {
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
-      border: 2px solid #cbd5e1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      color: #ffffff;
-      background: #ffffff;
-      flex-shrink: 0;
-      transition: var(--transition-normal);
-    }
-
-    .bucket-item.checked .bucket-checkbox {
-      background: #10b981;
-      border-color: #10b981;
-    }
-
-    .bucket-text {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-main);
-      flex-grow: 1;
-    }
-
-    .bucket-item.checked .bucket-text {
-      text-decoration: line-through;
-      color: var(--text-subtle);
-    }
-
-    .bucket-status {
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 0.2rem 0.6rem;
-      border-radius: var(--radius-full);
-      background: #f3f4f6;
-      color: #64748b;
-    }
-
-    .bucket-item.checked .bucket-status {
-      background: #d1fae5;
-      color: #047857;
-    }
 
     /* --- Digital Corkboard & Sticky Notes --- */
     .corkboard-section {
@@ -1874,7 +1787,6 @@
         <a href="#starter-pack" class="nav-link">🎒 Starter Pack</a>
         <a href="#scrapbook" class="nav-link">📸 Memories</a>
         <a href="#story" class="nav-link">📖 Timeline</a>
-        <a href="#bucket-list" class="nav-link">📋 Bucket List</a>
         <a href="#corkboard" class="nav-link">📌 Notes</a>
         <a href="#letter" class="nav-link">💌 Letter</a>
       </nav>
@@ -2358,51 +2270,7 @@
       </div>
     </section>
 
-    <!-- Section 6: Interactive Hangout Bucket List -->
-    <section class="bucket-section" id="bucket-list">
-      <div class="section-container">
-        <div class="section-header text-center">
-          <span class="section-tag">📋 Escapades & Plans</span>
-          <h2 class="section-title">The Close Friend Bucket List</h2>
-          <p class="section-subtitle">Click items to toggle and celebrate milestones we've conquered and future adventures waiting for us!</p>
-        </div>
 
-        <div class="bucket-box">
-          <ul class="bucket-list" id="bucket-list-items">
-            <li class="bucket-item checked">
-              <span class="bucket-checkbox">✓</span>
-              <span class="bucket-text">Claim a permanent corner table at Roslyn Coffee</span>
-              <span class="bucket-status">Accomplished ☕</span>
-            </li>
-            <li class="bucket-item checked">
-              <span class="bucket-checkbox">✓</span>
-              <span class="bucket-text">Complete the legendary full-circuit D-Mart snack tour</span>
-              <span class="bucket-status">Conquered 🛒</span>
-            </li>
-            <li class="bucket-item checked">
-              <span class="bucket-checkbox">✓</span>
-              <span class="bucket-text">Survive a 2-hour marathon phone call on a random weekday</span>
-              <span class="bucket-status">Mastered 📱</span>
-            </li>
-            <li class="bucket-item">
-              <span class="bucket-checkbox"></span>
-              <span class="bucket-text">Do an evening dessert crawl across 3 different city cafes</span>
-              <span class="bucket-status">In the Works 🍰</span>
-            </li>
-            <li class="bucket-item">
-              <span class="bucket-checkbox"></span>
-              <span class="bucket-text">Order the weirdest seasonal drink on the cafe menu just to review it</span>
-              <span class="bucket-status">Planned 🥤</span>
-            </li>
-            <li class="bucket-item">
-              <span class="bucket-checkbox"></span>
-              <span class="bucket-text">Actually hang up a phone call within the promised 5 minutes (Impossible)</span>
-              <span class="bucket-status">Pending ⏱️</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
     <!-- Section 7: Digital Corkboard & Sticky Notes Section -->
     <section class="corkboard-section" id="corkboard">
@@ -2486,7 +2354,7 @@
                   You're someone I can talk to about anything without having to put up a front, and I'm really grateful for our bond.
                 </p>
                 <p>
-                  Here's to many more coffee dates, spontaneous catch-ups, marathon phone talks, and checking off everything on our bucket list! 🎉
+                  Here's to many more coffee dates, spontaneous catch-ups, marathon phone talks, and making many more awesome memories together! 🎉
                 </p>
               </div>
 
@@ -2550,7 +2418,6 @@
       initFortuneCookie();
       initScrapbookFiltersAndLightbox();
       initCorkboardNotes();
-      initBucketList();
       initLetterEnvelope();
     });
 
@@ -2692,7 +2559,7 @@
       const emojis = ['💖', '✨', '🌸', '☕', '🛒', '📱', '🍩', '⭐'];
 
       document.addEventListener('click', (e) => {
-        if (e.target.closest('input, textarea, select, button, .bucket-item')) return;
+        if (e.target.closest('input, textarea, select, button')) return;
 
         const heart = document.createElement('span');
         heart.className = 'click-heart';
@@ -2885,29 +2752,7 @@
     }
 
     /* ==========================================================================
-       7. Interactive Bucket List
-       ========================================================================== */
-    function initBucketList() {
-      const items = document.querySelectorAll('.bucket-item');
-      items.forEach(item => {
-        item.addEventListener('click', () => {
-          item.classList.toggle('checked');
-          const check = item.querySelector('.bucket-checkbox');
-          const status = item.querySelector('.bucket-status');
-          if (item.classList.contains('checked')) {
-            check.textContent = '✓';
-            status.textContent = 'Accomplished ✨';
-            triggerConfetti(0.4);
-          } else {
-            check.textContent = '';
-            status.textContent = 'Planned 📌';
-          }
-        });
-      });
-    }
-
-    /* ==========================================================================
-       8. Sealed Letter Envelope Unfolding
+       7. Sealed Letter Envelope Unfolding
        ========================================================================== */
     function initLetterEnvelope() {
       const envelopeBox = document.getElementById('envelope-box');
